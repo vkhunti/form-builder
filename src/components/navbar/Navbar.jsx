@@ -16,8 +16,12 @@ function GlobalNavBar(props) {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            {/* <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link> */}
+            <Nav.Link
+              onClick={() => props.setCurrentPage("mainMenu")}
+              style={{ cursor: "pointer" }}
+            >
+              Home
+            </Nav.Link>
             <NavDropdown title="Templates" id="basic-nav-dropdown">
               <NavDropdown.Item
                 onClick={() => props.setCurrentPage("HP-Promo-btn-1-right")}
