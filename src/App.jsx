@@ -1,25 +1,18 @@
 import "./App.css";
 import { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import GlobalNavBar from "./components/navbar/Navbar.jsx";
-import MainMenu from "./components/mainMenu/MainMenu.jsx";
-import HPPromoBtnRight from "./components/HP-Promo-btn-1-right/HP-Promo-btn-1-right.jsx";
+import GlobalNavBar from "./components/navbar/Navbar";
+import pages from "./components/Pages";
 
 function App() {
+  const [currentPage, setCurrentPage] = useState("mainMenu");
 
-  const [mainMenu, setMainMenu] = useState(true)
-  
+  const templateToRender = pages[currentPage] || pages["mainMenu"];
+
   return (
     <>
-      <GlobalNavBar />
-      <button onClick={() => { setMainMenu(!mainMenu) }}>Click!</button>
-      {(() => {
-            if (mainMenu) {
-              return <MainMenu />;
-            } else {
-              return <HPPromoBtnRight />;
-            }
-          })()}
+      <GlobalNavBar currentPage={currentPage} setCurrentPage={setCurrentPage} />
+      <main>{templateToRender}</main>
     </>
   );
 }

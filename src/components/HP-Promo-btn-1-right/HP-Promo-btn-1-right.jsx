@@ -1,8 +1,7 @@
 function HPPromoBtnRight() {
-
   return (
     <>
-      <h1>Promo Button Right</h1>
+      <h1>Promo Button Right!!!!!</h1>
     </>
   );
 }
